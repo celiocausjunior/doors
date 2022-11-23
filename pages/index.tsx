@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Door from '../components/door'
 import Gift from '../components/Gift'
 
 
@@ -12,8 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-    <Gift />
+      <div style={{display: 'flex'}}>
+    <Door selectedDoor />
+    <Door />
       </div>
  </>
 )
