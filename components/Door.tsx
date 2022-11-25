@@ -1,15 +1,21 @@
 import styles from '../styles/door.module.css'
 
 import React from 'react'
+import DoorModel from '../models/doorModel'
 
-function Door(props:any) {
-  const selectedDoor = props.selectedDoor ? styles.selectedDoor : ''
+interface DoorProps{
+  door: DoorModel
+}
+
+function Door(props:DoorProps) {
+  const {door} = props
+  const selectedDoor = door.selected ? styles.selectedDoor : ''
   return (
     <div className={styles.area}>
       <div className={`${styles.frame} ${selectedDoor}`}>
         <div className={styles.door}>Door
           <div className={styles.numberDoor}>
-            3
+            {door.number}
           </div>
           <div className={styles.doorHandle} />
         </div>
