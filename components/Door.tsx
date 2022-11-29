@@ -4,14 +4,17 @@ import React from 'react'
 import DoorModel from '../models/doorModel'
 
 interface DoorProps{
-  door: DoorModel
+  value: DoorModel
+  onChange: (newDoor: DoorModel ) => void
 }
 
 function Door(props:DoorProps) {
-  const {door} = props
+  const door = props.value
   const selectedDoor = door.selected ? styles.selectedDoor : ''
+
+  const switchState = e => props.onChange(door.switchSelectedDoor())
   return (
-    <div className={styles.area}>
+    <div className={styles.area} onClick={switchState}>
       <div className={`${styles.frame} ${selectedDoor}`}>
         <div className={styles.door}>Door
           <div className={styles.numberDoor}>

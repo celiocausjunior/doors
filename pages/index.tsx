@@ -18,8 +18,7 @@ export default function Home() {
       </Head>
 
       <div style={{display: 'flex'}}>
-    <Door door={d1} />
-    {/* <Door door={d2}/> */}
+    <Door value={d1} onChange={newDoor => setD1(newDoor)} />
       </div>
  </>
 )
