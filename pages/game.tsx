@@ -2,6 +2,7 @@ import { useState } from "react"
 import { createDoors, updateDoors } from "../functions/doors"
 import Door from "../components/Door"
 import styles from '../styles/game.module.css'
+import Link from "next/link"
 
 export default function Game() {
 
@@ -16,10 +17,12 @@ export default function Game() {
     return (
         <div className={styles.game}>
             <div className={styles.doors}>
-            {renderDoors()}
+                {renderDoors()}
             </div>
             <div className={styles.buttons}>
-
+                <Link href="/">
+                    <button type="button" className="btn btn-danger">Reiniciar o jogo</button>
+                </Link>
             </div>
         </div>
     )
