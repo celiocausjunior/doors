@@ -24,8 +24,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div style={{ display: 'flex' }}>
-        {renderDoors()}
+      <div style={{display: "flex"}}>
+        <h1>
+          Início
+        </h1>
       </div>
     </>
   )
