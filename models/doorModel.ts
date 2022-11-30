@@ -27,6 +27,11 @@ export default class DoorModel{
         return this.#isOpen
     }
 
+    get isClosed(){
+        return !this.#isOpen
+    }
+
+
     switchSelectedDoor(){
         const selected = !this.selected
         return new DoorModel (this.number, this.hasGift, selected, this.isOpen)

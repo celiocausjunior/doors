@@ -2,6 +2,7 @@ import styles from '../styles/door.module.css'
 
 import React from 'react'
 import DoorModel from '../models/doorModel'
+import Gift from './Gift'
 
 interface DoorProps {
   value: DoorModel
@@ -32,7 +33,7 @@ function Door(props: DoorProps) {
   return (
     <div className={styles.area} onClick={switchDoorState}>
       <div className={`${styles.frame} ${selectedDoor}`}>
-        {door.isOpen ? null : doorRender()}
+        {door.isClosed ? doorRender() : door.hasGift ? <Gift /> : null}
       </div>
       <div className={styles.floor} />
     </div>
