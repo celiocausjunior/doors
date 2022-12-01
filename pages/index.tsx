@@ -2,10 +2,14 @@ import Head from 'next/head'
 import Card from '../components/Card'
 import styles from '../styles/form.module.css'
 import Link from 'next/link'
+import NumberInput from '../components/NumberInput'
+import { useState } from 'react'
 
 
 
 export default function Form() {
+  const [qtyDoors, setQtyDoors] = useState(3)
+  const [gift, setGift] = useState(1)
 
   return (
    
@@ -19,14 +23,18 @@ export default function Form() {
         <Card bgcolor="#c0392c" >
           <h1>Monty Hall</h1>
         </Card>
-        <Card />
+        <Card >
+          <NumberInput text='Quantas portas?' value={qtyDoors} onChange={newQty => setQtyDoors(newQty)}/>
+        </Card>
         
 
       </div>
       <div>
-      <Card />
+      <Card >
+      <NumberInput text='Porta com presente' value={gift} onChange={newGift => setGift(newGift)}/>
+      </Card>
         <Card bgcolor="#28a085" >
-          <Link href={`/game/4/2`} style={{textDecoration: 'none'}}>
+          <Link href={`/game/${qtyDoors}/${gift}`} style={{textDecoration: 'none', cursor:'pointer'}}>
             <h2 style={{display:"flex", flex: "1",justifyContent:"center", alignContent:"center", margin:"0", color:"white" }} >
               Iniciar
 
